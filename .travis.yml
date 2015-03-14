@@ -7,6 +7,6 @@ d:
 before_install:
 - sudo pip install codecov
 script:
-- dub test -b unittest-cov
+- dub test -b unittest-cov --compiler=${DC}
 after_success:
 - codecov
