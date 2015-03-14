@@ -1,0 +1,12 @@
+language: d
+d:
+- dmd-2.066.1
+- gdc-4.9.0
+- ldc-0.15.1
+
+before_install:
+- sudo pip install codecov
+script:
+- dub test -b unittest-cov
+after_success:
+- codecov

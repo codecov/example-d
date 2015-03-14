@@ -1,0 +1,7 @@
+{
+    "name": "codcov-d",
+    "description": "A codecov.io usage example",
+    "copyright": "Copyright © 2015, codecov, Colden Cullen",
+    "license": "MIT",
+    "authors": [ "Colden Cullen" ]
+}
