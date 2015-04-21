@@ -1,12 +1,8 @@
 language: d
 d:
-- dmd-2.066.1
-#- gdc-4.9.0
-#- ldc-0.15.1
+  - dmd-2.066.1
 
-before_install:
-- sudo pip install codecov
 script:
-- dub test -b unittest-cov --compiler=${DC}
+  - dub test -b unittest-cov --compiler=${DC}
 after_success:
-- codecov
+  - bash <(curl -s https://codecov.io/bash)

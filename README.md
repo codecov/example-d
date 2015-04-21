@@ -1,8 +1,13 @@
-# example-d [![Build Status](https://img.shields.io/travis/codecov/example-d/master.svg)](https://travis-ci.org/codecov/example-d) [![codecov](https://img.shields.io/codecov/c/github/codecov/example-d.svg)](https://codecov.io/github/codecov/example-d) 
+Codecov D Example
+=================
 
-An example of how to upload code coverage results to [codecov.io](https://travis-ci.org/codecov/example-d).
+| [https://codecov.io][1] | [@codecov][2] | [hello@codecov.io][3] |
+| ----------------------- | ------------- | --------------------- |
 
-### Travis CI
+This repository serves as an **example** on how to use [Codecov Global][4] for D.
+
+
+# Travis CI
 
 Add to your `.travis.yml` file.
 ```yml
@@ -10,12 +15,32 @@ language: d
 d:
  - dmd-2.066.1
 
-before_install:
- - sudo pip install codecov
 script:
  - dub test -b unittest-cov --compiler=${DC}
 after_success:
- - codecov
+ - bash <(curl -s https://codecov.io/bash)
 ```
 
-> Private repo? Run `codecov --token :token` replace `:token` with your repo upload token found on your repo page at [Codecov.io](https://codecov.io)
+> All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
+
+## Private Repos
+
+Add to your `.travis.yml` file.
+```yml
+language: d
+d:
+ - dmd-2.066.1
+env:
+  global:
+    - CODECOV_TOKEN=:uuid-repo-token
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+```
+
+View source and lean more about [Codecov Global Uploader][4]
+
+[1]: https://codecov.io/
+[2]: https://twitter.com/codecov
+[3]: mailto:hello@codecov.io
+[4]: https://github.com/codecov/codecov-bash
