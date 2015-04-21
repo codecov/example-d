@@ -7,5 +7,4 @@ script:
   - dub test -b unittest-cov --compiler=${DC}
 
 after_success:
-  - ls -al
   - bash <(curl -s https://codecov.io/bash)
