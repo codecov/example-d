@@ -6,7 +6,6 @@ Codecov D Example
 
 This repository serves as an **example** on how to use [Codecov Global][4] for D.
 
-
 # Travis CI
 
 Add to your `.travis.yml` file.
