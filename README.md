@@ -1,12 +1,8 @@
-Codecov D Example
-=================
-
-| [https://codecov.io][1] | [@codecov][2] | [hello@codecov.io][3] |
-| ----------------------- | ------------- | --------------------- |
-
+# [Codecov][1] D Example
+## Guide
 This repository serves as an **example** on how to use [Codecov Global][4] for D.
 
-# Travis CI
+### Travis Setup
 
 Add to your `.travis.yml` file.
 ```yml
@@ -20,21 +16,28 @@ after_success:
  - bash <(curl -s https://codecov.io/bash)
 ```
 
-> All other CI you can simply run `bash <(curl -s https://codecov.io/bash)`.
-
-## Private Repos
-> Set `CODECOV_TOKEN` in your environment variables.
-
+## Caveats
+### Private Repos
 Add to your `.travis.yml` file.
 ```yml
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t :uuid-repo-token
+  - bash <(curl -s https://codecov.io/bash) -t uuid-repo-token
 ```
-> Or you can set the enviornment variable `CODECOV_TOKEN` to your token.
 
-View source and learn more about [Codecov Global Uploader][4]
+## Support
+
+### Contact
+- Intercom (in-app messanger)
+- Email: support@codecov.io
+- Slack: slack.codecov.io
+- [gh/codecov/support](https://github.com/codecov/support)
+
+1. More documentation at https://docs.codecov.io
+2. Configure codecov through the `codecov.yml`  https://docs.codecov.io/docs/codecov-yaml
+
+
 
 [1]: https://codecov.io/
-[2]: https://twitter.com/codecov
-[3]: mailto:hello@codecov.io
-[4]: https://github.com/codecov/codecov-bash
+[2]: https://github.com/codecov/example-php/blob/master/.travis.yml#L15
+[3]: https://github.com/codecov/example-php/blob/master/.travis.yml#L18
+[4]: https://github.com/codecov/codecov-python
